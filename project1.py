@@ -22,7 +22,7 @@ t1.left(90)
 
 t1.pendown()
 
-t1.fillcolor("#ff99d1")
+t1.fillcolor("royalblue")
 
 t1.begin_fill()
 
@@ -46,7 +46,7 @@ t1.forward(400)
 
 t1.end_fill()
 
-t1.fillcolor("#4E5CFB")
+t1.fillcolor("#222")
 
 t1.begin_fill()
 
@@ -62,7 +62,7 @@ t1.forward(160)
 
 t1.end_fill()
 
-t1.fillcolor("#112")
+t1.fillcolor("#ff9933")
 
 t1.begin_fill()
 
@@ -300,9 +300,9 @@ t1.right(90)
 
 t1.forward(420)
 
-t1.color("#00a606")
+t1.color("#000")
 
-t1.write("Radhe Krishna.... By Aditya", font=("Script", 45, "bold"))
+t1.write("Radhe Krishna....", font=("Script", 10, "bold"))
 
 t1.hideturtle()
 
