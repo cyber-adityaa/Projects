@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Password Protected File.</title>
+
+    <style>
+
+        @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+        #MyBody {
+
+            background: #111 ;
+
+            font-family: 'Poppins', sans-serif;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            min-height: 100vh;
+
+            overflow: hidden;
+
+            text-shadow: 0px 0px 1px #fff ;
+
+        }
+
+        .inp {
+
+            margin-top: 15px;
+
+            background: transparent;
+
+            border: 1px solid white;
+
+            border-radius: 4px;
+
+            outline: none;
+
+            color: white;
+
+            display: block;
+
+            padding: 0px 10px;
+
+            width: 210px;
+
+            font-size: 1.1em;
+
+            height: 40px;
+
+        }
+
+        .inp::placeholder {
+
+            color: #DDDDDD;
+
+            font-family: monospace;
+
+           
+
+        }
+
+        .btnInp {
+
+            font-family: 'Poppins', sans-serif;
+
+            width: 232px;
+
+            margin-top: 10px;
+
+            height: 42px;
+
+            border-radius: 4px;
+
+            background: #3D4C80;
+
+            border: none;
+
+            color: white;
+
+        }
+
+        .c1 {
+
+            border: 1px solid white;
+
+            padding: 15px;
+
+            border-radius: 4px;
+
+        }
+
+        .t-h-1 {
+
+            color: white;
+
+            font-weight: bolder;
+
+            font-size: 1.1em;
+
+            display: block;
+
+            color: #fff
+
+        }
+
+        .t-h-2 {
+
+            font-size: .9em;
+
+            color: white;
+
+        }
+
+        .parent {
+
+            border: 1px solid white;
+
+            width: 200px;
+
+            height: 40px;
+
+            border-radius: 4px;
+
+            overflow-x: hidden;
+
+        }
+
+        .child {
+
+            background: white;
+
+            width: 0px;
+
+            height: 40px;
+
+            animation: prog 5s ease-out 1s 1;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-weight: bolder;
+
+        }
+
+        @keyframes prog {
+
+            0% {
+
+                width: 0%;
+
+            }
+
+            100% {
+
+                width: 100%;
+
+                background: #fff;
+
+            }
+
+        }
+
+        .modal {
+
+            display: none;
+
+            position: fixed;
+
+            z-index: 1;
+
+            left: 0;
+
+            top: 0;
+
+            width: 100%;
+
+            height: 100%;
+
+            overflow: auto;
+
+            background-color: transparent;
+
+            background-color: transparent;
+
+        }
+
+        .modal-content {
+
+            background-color: #000;
+
+            margin: 15% auto;
+
+            padding: 20px;
+
+            border: 1px solid #888;
+
+            width: 80%;
+
+            border-radius: 5px;
+
+        }
+
+        .close {
+
+            color: #aaa;
+
+            float: right;
+
+            font-size: 28px;
+
+            font-weight: bold;
+
+        }
+
+        .close:hover,
+
+        .close:focus {
+
+            color: black;
+
+            text-decoration: none;
+
+            cursor: pointer;
+
+        }
+
+    </style>
+
+</head>
+
+<body id="MyBody" class="body">
+
+    <div>
+
+        <div class="c1">
+
+            <span>
+
+                <span class="t-h-1"> Content Is Protected.</span>
+
+            <span class="t-h-2">Enter Password To Access Content :</span>
+
+            </span>
+
+            <form>
+
+                <input placeholder="Enter Password" type="password" class="inp" id="password" min="4" max="4" required value="">
+
+                <button onclick="abc(event)" class="btnInp" id="myBtn">Accees</button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <div id="myModal" class="modal">
+
+        <div class="modal-content">
+
+            <span class="close" id="close">&times;</span>
+
+            <h3>Contents Will Be Here</h3>
+
+        </div>
+
+    </div>
+
+    </div>
+
+    <script>
+
+        function abc(event) {
+
+            event.preventDefault();
+
+            var pass = document.getElementById('password').value;
+
+            var body = document.getElementById('body');
+
+            var modal = document.getElementById('myModal');
+
+            if (pass == 123) {
+
+                if (modal.style.display = "none") {
+
+                    modal.style.display = "block"
+
+                }
+
+            } else {
+
+                alert('Wrong Password')
+
+                modal.style.display = 'none';
+
+            }
+
+        }
+
+        document.getElementById('close').addEventListener("click", function() {
+
+            if (modal.style.display = "block") {
+
+                modal.style.display = "none"
+
+            }
+
+        })
+
+    </script>
+
+</body>
+
+</html>
