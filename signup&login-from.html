@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+	<meta charset="UTF-8">	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title></title>
+
+	<style>
+
+	html,body{
+
+		display: flex ;
+
+		align-items: center ;
+
+		justify-content: center ;
+
+		min-height: 100vh ;
+
+		overflow-y: hidden ;
+
+	}
+
+		.login-container, .signup-container {
+
+  max-width: 400px;
+
+  margin: auto;
+
+  padding: 20px;
+
+  border: 1px solid #634CAF;
+
+  border-radius: 5px;
+
+}
+
+.login-container h2, .signup-container h2 {
+
+  text-align: center;
+
+}
+
+form {
+
+  display: flex;
+
+  flex-direction: column;
+
+}
+
+label {
+
+  margin-bottom: 10px;
+
+}
+
+input[type="text"], input[type="email"], input[type="password"] {
+
+  padding: 10px;
+
+  margin-bottom: 20px;
+
+  border: 1px solid #634CAF;
+
+  border-radius: 5px;
+
+}
+
+button[type="submit"] {
+
+  padding: 10px;
+
+  background-color: #634CAF;
+
+  color: white;
+
+  border: none;
+
+  border-radius: 5px;
+
+  cursor: pointer;
+
+}
+
+button[type="submit"]:hover {
+
+  background-color: #3E8E8D;
+
+}
+
+.signup-link, .login-link {
+
+  color: blue;
+
+  text-decoration: underline;
+
+  cursor: pointer;
+
+}
+
+.login-container{
+
+	display: none ;
+
+}
+
+	</style>
+
+</head>
+
+<body>
+
+	
+
+<div class="login-container" id="login-container">
+
+  <h2>Login</h2>
+
+  <form>
+
+    <label for="username">Username:</label>
+
+    <input type="text" id="username" name="username" required>
+
+    <label for="password">Password:</label>
+
+    <input type="password" id="password" name="password" required>
+
+    <button type="submit">Login</button>
+
+  </form>
+
+  <p>Not created an account yet? <a href="#" onclick="toggleForm()" class="signup-link">Sign up here</a></label></p>
+
+</div>
+
+<div class="signup-container">
+
+  <h2>Sign Up</h2>
+
+  <form>
+
+    <label for="fullname">Full Name:</label>
+
+    <input type="text" id="fullname" name="fullname" required>
+
+    <label for="email">Email:</label>
+
+    <input type="email" id="email" name="email" required>
+
+    <label for="new-username">Username:</label>
+
+    <input type="text" id="new-username" name="new-username" required>
+
+    <label for="new-password">Password:</label>
+
+    <input type="password" id="new-password" name="new-password" required>
+
+    <button type="submit">Sign Up</button>
+
+  </form>
+
+  <p>Already have an account? <a href="#" 
+
+  onclick="toggleForm()" class="login-link">Login here</a></p>
+
+</div>
+
+<script>
+
+	
+
+function toggleForm() {
+
+  const loginContainer = document.getElementById('login-container');
+
+  const signupContainer = document.querySelector('.signup-container');
+
+  if (loginContainer.style.display === 'none') {
+
+    loginContainer.style.display = 'block';
+
+    signupContainer.style.display = 'none';
+
+  } else {
+
+    loginContainer.style.display = 'none';
+
+    signupContainer.style.display = 'block';
+
+  }
+
+}
+
+const signupLink = document.getElementById('signup-link');
+
+signupLink.addEventListener('click', toggleForm()); 
+
+</script>
+
+</body>
+
+</html>
