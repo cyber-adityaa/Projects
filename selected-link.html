@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <script>
+
+      function updateLink() {
+
+        var select = document.getElementById("options");
+
+        var selectedOption = select.options[select.selectedIndex].value;
+
+        var link = document.getElementById("link");
+
+        link.href = selectedOption;
+
+      }
+
+    </script>
+
+    <style>
+
+    	body{
+
+    	display: flex ;
+
+    align-items: center ;
+
+   justify-content: center ;
+
+  min-height: 100vh ;
+
+ overflow: hidden ;
+
+background:#111122 ;
+
+    	}
+
+    	.con{
+
+    		text-align: center ;
+
+    		height: 190px;
+
+    		padding: 15px ;
+
+    		min-width: 255px;
+
+    		border-radius :10px ;
+
+    		border: 1px solid #fff;
+
+    	}
+
+    	#options{
+
+    		display: block ;
+
+    		width: 100% ;
+
+    		height: 35px ;
+
+    		outline: none ;
+
+    		border: 1px solid #fff;
+
+    		border-radius: 4px ;
+
+    		color: #fff;
+
+    		padding: 0px 10px;
+
+    		background :transparent;
+
+    	}
+
+    	#link{
+
+    		background: royalblue;
+
+    		user-select: none ;
+
+    		text-decoration:none;
+
+        padding: 14px ;
+
+        display: block ;
+
+        color: white ;
+
+        border-radius: 4px ;
+
+    	}
+
+    </style>
+
+  </head>
+
+  <body>
+
+  	<div class="con">
+
+<span>
+
+	<span style="display: block ;font-size: 1.2em ;font-weight: 900 ;margin-top: 5px;color: #fff;">
+
+	  Select A Link 
+
+		</span>
+
+<div style="width:100% ;height:2px;background:white;margin-top:10px ;"></div>
+
+<br>
+
+<div>
+
+<label style="margin-left: -147px ;font-size:.9em;color: #fff;">Select Version: </label><div style="width:100% ;height:1px;background:transparent ;margin-top:10px ;"></div>
+
+    <select id="options" onchange="updateLink()">
+
+      <option value="https://www.google.com">Google</option>
+
+      <option value="https://www.bing.com">Bing</option>
+
+      <option value="https://www.duckduckgo.com">DuckDuckGo</option>
+
+    </select><br>
+
+    
+
+    <a id="link" href="https://www.google.com">Open Selected Link</a>
+
+  	</div>
+
+  </body>
+
+</html>
